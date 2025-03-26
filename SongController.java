@@ -21,6 +21,7 @@ import songs.catalog.controller.model.SongData;
 import songs.catalog.controller.model.SongData.SongArtist;
 import songs.catalog.controller.model.SongData.SongGenre;
 import songs.catalog.controller.model.SongData.SongReview;
+import songs.catalog.entity.Artist;
 import songs.catalog.entity.Genre;
 import songs.catalog.entity.Review;
 import songs.catalog.service.SongService;
@@ -269,6 +270,18 @@ public class SongController {
 		
 		log.info("Retrieving all genres");
 		return songService.retrieveAllReviews();
+	}
+	
+	/*
+	 *  
+	 * @return a JSON Response with all artists in a SongData object
+	 * 
+	 */
+	@GetMapping("/artist")
+	public List<Artist> listAllArtists(){
+		
+		log.info("Retrieving all artists");
+		return songService.retrieveAllArtists();
 	}
 	
 	
